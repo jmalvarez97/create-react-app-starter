@@ -1,12 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import QrReader from 'react-qr-scanner';
+import Datos from "./components/Datos"
+
 
 function App() {
   const qrRef = useRef(null);
+  const [id, setId] = useState("");
 
   const handleScan = (data) => {
     if (data) {
-      console.log(data.text)
+      setId(data.text)
       alert(`ID escaneado: ${data.text}`);
     }
   };
@@ -30,7 +33,7 @@ function App() {
         }}
         style={{ width: '70%' }}
       />
-</div>
+    </div>
   );
 }
 
