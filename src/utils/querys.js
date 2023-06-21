@@ -1,14 +1,16 @@
-import axios from "axios"
-
 const URL_API = "https://expressjs-mongoose-production-14de.up.railway.app/"
 
-export async function getPaymentsOfID(id,state) {
-    console.log(id)
-    if(id){
-        axios.get(URL_API + "socio/payments/" + id)
-         .then((res) => {
-            console.log(res.data)
-            state(res.data)
-         })
+export async function getPaymentsOfID(id, state) {
+    if (id) {
+        try {
+            const response = await fetch(URL_API + "socio/payments/" + id);
+            const data = await response.json();
+            console.log(data)
+            state(data);
+        } 
+        catch (error) {
+            console.error(error);
+        }
     }
 }
+
