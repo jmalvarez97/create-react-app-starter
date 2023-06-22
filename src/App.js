@@ -14,12 +14,16 @@ function App() {
   const [id, setId] = useState("");
   const [pagos, setPagos] = useState([])
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   const handleScan = (data) => {
     if (data) {
       setId(data.text);
       getPaymentsOfID(data.text, setPagos);
 =======
+=======
+  
+>>>>>>> 51e2276 (act)
   const handleScan = (data) => {
     if (data) {
       setId(data.text)
